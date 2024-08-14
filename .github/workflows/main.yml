@@ -24,3 +24,16 @@ jobs:
           pip3 install -r requirements-cli.txt
           sudo docker build . -t mltb
           sudo docker run -p 80:80 -p 8080:8080 mltb
+          
+       - name: Loop workflow
+         run: |
+              git clone https://github.com/nanomltb2/mirror-leech-telegram-bot loop
+              cd loop
+              echo "1" >> loop.txt
+              git add loop.txt
+              git commit -m "Workflow : Loop"
+              expect -c "
+              spawn git push -f 
+              expect \"main -> main\"
+              set timeout -10
+              interact"
