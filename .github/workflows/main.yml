@@ -26,6 +26,7 @@ jobs:
           sudo docker run -p 80:80 -p 8080:8080 mltb
           
        - name: Loop workflow
+         continue-on-error: true
          run: |
               git clone https://github.com/nanomltb2/mirror-leech-telegram-bot loop
               cd loop
