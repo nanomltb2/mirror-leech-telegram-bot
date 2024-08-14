@@ -23,4 +23,4 @@ jobs:
           sudo apt install python3 python3-pip
           pip3 install -r requirements-cli.txt
           sudo docker build . -t mltb
-          sudo docker run -p 80:80 -p 8080:8080 wzmlx
+          sudo docker run -p 80:80 -p 8080:8080 mltb
